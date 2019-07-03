@@ -1,7 +1,7 @@
 import React from 'react';
 
-import iconoCompletar from '../utils/iconoCompletar.svg';
-import iconoEliminar from '../utils/iconoEliminar.svg';
+import IconoEliminar from './iconoEliminar';
+import IconoCompletar from './iconoCompletar';
 
 const TodoList = (props) => {
     const renderTareas = (data) => (
@@ -9,8 +9,12 @@ const TodoList = (props) => {
             <li key={item.id}>
                 {item.text}
                 <div className="buttons">
-                    <button className="remove" onClick={ () => { props.removeTarea(item.id) } }> {iconoEliminar} </button>
-                    <button className="complete" onClick={ () => { props.completeTarea(item.id) } }> {iconoCompletar} </button>
+                    <button className="remove" onClick={ () => { props.removeTarea(item.id) } }>
+                        <IconoEliminar /> 
+                    </button>
+                    <button className="complete" onClick={ () => { props.completeTarea(item.id) } }>
+                        <IconoCompletar />
+                    </button>
                 </div>
             </li>
         ))
